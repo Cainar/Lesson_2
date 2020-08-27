@@ -44,7 +44,7 @@ days_hash.each do |k, v|
     day_num += v
 end
 
-puts "поряковый номер даты: #{day_num + d}"
+puts "порядковый номер даты: #{day_num + d}"
 
 
 

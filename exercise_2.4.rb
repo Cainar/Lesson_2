@@ -24,6 +24,6 @@ end
 hash_letters.each do |k, v|
   hash_vowels[k] = v if vowels.include?(k)
 end
-
-print hash_vowels
+puts "Хеш гласные буквы с порядковым номером"
+puts hash_vowels
 

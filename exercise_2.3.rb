@@ -15,5 +15,5 @@ loop do
   i += 1
 end
 
-print "fib_numbers"s
+puts fib_numbers
 

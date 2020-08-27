@@ -19,7 +19,7 @@ calendar = {
 }
 
 # цикл для вывода искомых месяцев
-
+puts "Месяцы дительность в 30 дней:"
 calendar.each do |month, value|
   puts month.to_s if value == 30
 end
