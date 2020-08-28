@@ -9,7 +9,8 @@ fib = fib_numbers.last
 i = 0
 
 loop do
-  fib = fib_numbers[i].+(fib_numbers[i.+(1)]) # дань уважения Lisp )))))))
+  # обратные индексы, два последних элемента
+  fib = fib_numbers[-1] + fib_numbers[-2]
   break if fib > 100
   fib_numbers << fib
   i += 1

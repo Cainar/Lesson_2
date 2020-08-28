@@ -1,29 +1,14 @@
 # Заполнить хеш гласными буквами, где значением будет являтся порядковый номер буквы в алфавите (a - 1).
 
 # Задаим массив ключей алфавита и гасных ключей.
-
-arr = (:a..:z).to_a
+symbols = (:a..:z).to_a
 vowels = [:a, :e, :i, :o, :u, :y]
 
-# Создает хэш для алфавита и гласных ключей
-
-hash_letters = {}
-hash_vowels = {}
-
 # назначает каждой букве значение порядкового номера
-
-i = 0
-
-arr.each do |x|
-  i += 1
-  hash_letters[x] = i
+# .each_with_index не знал, мощная штука)))
+puts "Гласные буквы с порядковым номером"
+symbols.each_with_index do |symbol, index|
+  index += 1
+  puts "#{symbol} => #{index}" if vowels.include?(symbol)
 end
-
-# заполняеn хэш гласными буквами
-
-hash_letters.each do |k, v|
-  hash_vowels[k] = v if vowels.include?(k)
-end
-puts "Хеш гласные буквы с порядковым номером"
-puts hash_vowels
 

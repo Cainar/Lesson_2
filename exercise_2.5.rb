@@ -3,48 +3,21 @@
 # Учесть, что год может быть високосным.
 
 # создает справочник по количеству дней в месяце
-days_hash = {
-  1 => 31,
-  2 => 28,
-  3 => 31,
-  4 => 30,
-  5 => 31,
-  6 => 30,
-  7 => 31,
-  8 => 31,
-  9 => 30,
-  10 => 31,
-  11 => 30,
-  12 => 31
-}
+monthes = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 # ввод данных от пользователя
 puts "введите дату в формате dd/mm/yyyy"
 date = gets.chomp.split("/")
 
-d, m, y = date.map! { |x| x.to_i }
-
-# проверка на 'високосность'
-
-def leap_year?(year)
-  if year % 4 != 0 or (year % 100 == 0 and year % 400 != 0)
-    false
-  else
-    true
-  end
-end
+d, m, year = date.map! { |x| x.to_i }
 
 # считаем дни
 
-day_num = 0
-days_hash[2] = 29 if leap_year?(y)
+monthes[1] = 29 if year % 4 == 0 || (year % 100 != 0 && year % 400 == 0)
+day_num = monthes.take(m - 1).sum + d
 
-days_hash.each do |k, v|
-    break if k == m
-    day_num += v
-end
 
-puts "порядковый номер даты: #{day_num + d}"
+puts "порядковый номер даты: #{day_num}"
 
 
 
